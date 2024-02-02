@@ -2,13 +2,16 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
+    <title>Domain Processor</title>
   </head>
   <body>
-    Title: <input id="title"/>
-    <button id="btn" type="button">Set</button>
+    <div>
+      Domain: <input id="domain" placeholder="Enter domain"/>
+      <button id="btn" type="button">Process Domain</button>
+      <button id="choose-file" type="button">Choose File Path</button>
+    </div>
+    <div id="result"></div>
     <script src="./renderer.js"></script>
   </body>
 </html>
