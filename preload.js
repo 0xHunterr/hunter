@@ -1,5 +1,6 @@
-const { contextBridge, ipcRenderer } = require('electron/renderer')
+const { ipcRenderer } = require('electron');
 
-contextBridge.exposeInMainWorld('electronAPI', {
-  setTitle: (title) => ipcRenderer.send('set-title', title)
-})
+window.addEventListener('DOMContentLoaded', () => {
+  // Expose ipcRenderer to the window object
+  window.ipcRenderer = ipcRenderer;
+});
