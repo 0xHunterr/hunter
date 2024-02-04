@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const folderPath = filePaths[0]; // Use the first selected folder path
 
           // Send the input domain and folder path to the main process
-          ipcRenderer.send('process-domain', { domain: inputDomain, folderPath });
+          ipcRenderer.send('process-domain', { domain: inputDomain, filePath:folderPath });
         } else {
           console.log('Folder path not selected.');
         }

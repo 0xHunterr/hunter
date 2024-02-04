@@ -4,12 +4,15 @@ function CurrentOS(){
   return os.platform()
 }
 
-export function getExtension(){
+ function getExtension(){
   if(CurrentOS === 'win32'){
     return '.exe'
   }
   else return ''
 }
 
-const ext = getExtension()
+module.exports = {
+   getExtension,
+  // Add other exported functions
+};
 
