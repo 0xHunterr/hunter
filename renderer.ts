@@ -1,4 +1,4 @@
-const { ipcRenderer, remote } = require('electron');
+import { ipcRenderer, dialog }  from 'electron'
 
 document.addEventListener('DOMContentLoaded', () => {
   const domainInput = document.getElementById('domain');
@@ -8,10 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   processButton.addEventListener('click', () => {
     // Get the input domain from the input field
+    //@ts-expect-error
     const inputDomain = domainInput.value;
 
     // Show folder dialog to choose a folder path
-    remote.dialog.showOpenDialog({ title: 'Choose Folder', properties: ['openDirectory'] })
+    dialog.showOpenDialog({ title: 'Choose Folder', properties: ['openDirectory'] })
       .then(({ filePaths }) => {
         // filePaths is an array containing the selected folder path(s)
         if (filePaths && filePaths.length > 0) {

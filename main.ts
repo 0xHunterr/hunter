@@ -1,8 +1,8 @@
-const { app, BrowserWindow, ipcMain, dialog } = require("electron");
-const path = require("path");
-const recon = require("./recon/recon");
+import { app, BrowserWindow, ipcMain } from "electron"
+import path from "node:path"
+import { subFinderList } from "./recon/recon";
 
-let mainWindow;
+let mainWindow:Electron.BrowserWindow;;
 
 app.on("ready", () => {
   mainWindow = new BrowserWindow({
@@ -18,6 +18,6 @@ app.on("ready", () => {
   // Handle IPC message from renderer process
   ipcMain.on("subfinder-list", (event, { domain, filePath }) => {
     // Pass the domain and file path to your backend function
-    //recon.subfinder_for_single_windows(domain, filePath);
+    subFinderList(domain, filePath);
   });
 });
