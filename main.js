@@ -16,7 +16,7 @@ app.on("ready", () => {
   mainWindow.loadFile("index.html");
 
   // Handle IPC message from renderer process
-  ipcMain.on("process-domain", (event, { domain, filePath }) => {
+  ipcMain.on("subfinder-list", (event, { domain, filePath }) => {
     // Pass the domain and file path to your backend function
     //recon.subfinder_for_single_windows(domain, filePath);
   });
