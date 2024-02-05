@@ -5,12 +5,17 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "dev": "electron .",
+    "preview": "electron dist/app.js",
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@electron-forge/cli": "^7.2.0",
-    "electron": "^28.1.4"
-  }
+    "@types/electron": "^1.6.10",
+    "electron": "^28.1.4",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {}
 }
