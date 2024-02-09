@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Recon</title>
+  </head>
+  <body class="bg-slate-500">
+    <div class="flex justify-center gap-10 items-center my-20">
+      Domain: <input class="text-white" id="domain" placeholder="Enter domain"/>
+      <button class="p-2 bg-white rounded-lg" id="btn" type="button">Process Domain</button>
+      <button class="p-2 bg-white rounded-lg" id="choose-file" type="button">Choose File Path</button>
+    </div>
+    <div id="result"></div>
+    <script src="./renderer.js"></script>
+  </body>
+</html>

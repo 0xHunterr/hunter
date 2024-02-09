@@ -25,6 +25,7 @@ app.whenReady().then(() => {
   ipcMain.handle('subfinder-process', (event,args)=>{
     subFinderList(args.domain,args.folderPath)
   })
+  ipcMain.handle('Log',()=>{console.log('tht')})
   createWindow()
   app.on('activate', function () {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
