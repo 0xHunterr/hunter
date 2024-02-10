@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
   const domainInput = document.getElementById('domain');
   const processButton = document.getElementById('btn');
@@ -13,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   processButton.addEventListener('click', async () => {
     // Get the input domain from the input field
     const inputDomain = domainInput.value;
-    await window.electronAPI.testLog()
+    await window.electronAPI.subfinder(inputDomain,folderPath)
+    resultDiv.innerText="Result are exported to its location"
   });
 
 });
