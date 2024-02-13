@@ -1,6 +1,6 @@
 const { app, BrowserWindow, ipcMain, dialog } = require("electron/main");
 const path = require("node:path");
-const { subFinderList, subFinder } = require("./recon/recon");
+const { subFinder,testRecon } = require("./recon/recon");
 
 async function handleFileOpen() {
   const { canceled, filePaths } = await dialog.showOpenDialog({
@@ -12,13 +12,14 @@ async function handleFileOpen() {
 }
 
 function createWindow() {
+  //testRecon();
   const mainWindow = new BrowserWindow({
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
     },
   });
   mainWindow.loadFile("index.html");
-  mainWindow.webContents.openDevTools();
+ // mainWindow.webContents.openDevTools();
 }
 
 app.whenReady().then(() => {
