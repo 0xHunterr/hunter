@@ -1,20 +1,21 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-  const domainInput = document.getElementById('domain');
-  const processButton = document.getElementById('btn');
-  const chooseFolderButton = document.getElementById('choose-file');
-  const resultDiv = document.getElementById('result');
+  const AttacksButton = document.getElementById('Atks-btn');
+  const WAFButton = document.getElementById('WAF-btn');
 
-  let folderPath= './'
-  chooseFolderButton.addEventListener('click',async ()=>{
-    folderPath = await window.electronAPI.openFile()
+  let pageUrl= './';
+  
+  function redirectToPage(pageUrl) {
+   window.location.href = pageUrl;
+  }
+
+
+  AttacksButton.addEventListener('click', function(){
+      redirectToPage('pages/Attacks/Attacks.html');
   })
 
-  processButton.addEventListener('click', async () => {
-    // Get the input domain from the input field
-    const inputDomain = domainInput.value;
-    await window.electronAPI.subfinder(inputDomain,folderPath)
-    resultDiv.innerText="Result are exported to its location"
-  });
+  WAFButton.addEventListener('click', function(){
+      redirectToPage('pages/WAF/WAF.html');
+  })
 
 });
